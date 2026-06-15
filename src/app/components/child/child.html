@@ -1,0 +1,104 @@
+<h1>child works!</h1>
+<!-- //parent to child -->
+<!-- Value from Parent : {{pData}} -->
+
+<!-- //Child to parent -->
+<!-- <input type="text" #cComponent (keyup)="sendData(cComponent.value)"> -->
+
+<!-- //Custom directive -->
+<!-- <div appHighlight >hii I am custom Directive</div> -->
+
+<!-- //Interpolation -->
+<!-- my object age is {{age.age ? age.age : 0}}
+<button (click)="increageAge()">Increase age</button>
+ my age is {{age}} -->
+
+<!-- //Attribute binding
+<table border="1">
+    <tr>
+        <th [attr.colspan]="colSpanValue">Employee Details</th>
+    </tr>
+    <tr>
+        <td>Employee Name</td>
+        <td>Age</td>
+        <td>salary</td>
+    </tr>
+    <tr>
+        <td>Lavanya</td>
+        <td>25</td>
+        <td>250000</td>
+    </tr>
+    <tr>
+        <td>Lava</td>
+        <td>24</td>
+        <td>240000</td>
+    </tr>
+</table> -->
+
+<!-- //Dynamic Styling
+<div [style.font-size.px]="fontSize">hi i am dynamic styling</div>
+<div [ngStyle]="{'background-color':'red'}">I am using ngStyle</div>
+<div [ngStyle]="addCssStyles()">I am using ngStyle using Function</div> -->
+
+<!-- //Dynamic class styling
+<div [class]="classToApply">I am using ngClass</div>
+<div [ngClass]="addCssClasses()">I am using ngClass using Function</div> -->
+
+<!-- //property binding
+<div [innerHTML]="name"></div>
+<div innerHTML="{{name}}"></div>
+
+//both works same but there is a difference that interpolation does not work for boolean values
+<button (click)="onClick()">Enable/Disable</button>
+<button [disabled]="currentValue">Property Binding</button>
+<button disabled="{{currentValue}}">Interpolation</button> -->
+
+<!-- //Event Binding
+<button (click)="onClickEvent()">Click me</button>
+<input type="text" (keyup)="onKeyUp()" (keydown)="onKeyDown()">
+The input is <input type="text" #inputValue (keyup)="setInputValue(inputValue.value)">
+The message is {{message}}. -->
+
+<!-- //Two way binding 
+//manually
+The input is <input type="text" [value]="message" #inputValue (keyup)="setInputValue(inputValue.value)">
+The message is {{message}}.
+<br>
+//Using ngModel //requires froms module//
+The input is <input type="text" [(ngModel)]="message">
+The message is {{message}} -->
+
+<!-- //ng-content ng-container ng-template ngTemplateOutlet -->
+<!-- parent Html data shows here
+<ng-content></ng-content> -->
+
+<!-- <ng-template #showNoData>
+    No data found.
+</ng-template>
+
+@if(!dataExists){
+    <ng-container [ngTemplateOutlet]="showNoData"></ng-container>
+}@else{
+    data is here
+} -->
+
+<!-- // ViewChild & ViewChildren
+ //element access
+<input  type="text" placeholder="enter data" #inputBox>
+<button (click)="readValue()">Read value</button>
+{{inputData}}
+
+//child compoennt property access
+<app-child-in-child [headings]="'Hi,I am heading'"></app-child-in-child>
+
+//View Children
+<button #btn>Save</button>
+<button #btn>Delete</button>
+<button #btn>Update</button> -->
+
+<app-child-in-child>
+  <h2 #title>hii i am ng content projection</h2>
+  <p #msg>Hello</p>
+  <p #msg>Angular</p>
+  <p #msg>20</p>
+</app-child-in-child>
