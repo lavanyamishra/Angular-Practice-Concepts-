@@ -1,0 +1,102 @@
+<h1>parent works!</h1>
+<!-- //By using metaData 
+
+
+//parent to child -->
+<!-- Parent value is : <input type="text" #pComponent (keyup)="0">
+<app-child [pData]="pComponent.value"></app-child> -->
+
+<!-- //child to parent -->
+<!-- data from child is : {{cData}}
+<app-child (cDataEvent)="getData($event)"></app-child> -->
+
+<!-- //if and else if example -->
+<!-- @if (true) {
+  <h2>checking my apperance</h2>
+}
+
+@if (age < 20) {
+  Hi i am young
+} @else if (age > 20 && age < 60) {
+  hi I am in mid
+} @else if (age > 60 && age < 90) {
+  hi i am little old
+} @else {
+  i am old
+} -->
+
+<!-- //switch -->
+<!-- @switch(age){
+@case(20){
+    i am young
+}
+@case(40){
+    i am little young
+}
+@case(60){
+    i am less young
+}
+@case(80){
+    i am small young
+}
+@default{
+    i am old
+}
+} -->
+
+<!-- //By old syntax -->
+<!-- 
+<div [ngSwitch]="age">
+    <div *ngSwitchCase="20">I AM YOUNG</div>
+    <div *ngSwitchCase="40">I AM little YOUNG</div>
+    <div *ngSwitchCase="60">I AM less YOUNG</div>
+    <div *ngSwitchCase="80">I AM small YOUNG</div>
+    <div *ngDefaultCase>I AM old</div>
+
+</div> -->
+
+<!-- @for (item of employee; track item.id) {
+  <p>Employee details : {{ item.id }},{{ item.name }},{{ item.salary }}</p>
+} @empty {
+  <p>No data found.</p>
+} -->
+
+<!-- <table border="1">
+  <tr>
+    <th>Employee id</th>
+    <th>Employee Name</th>
+    <th>Employee salary</th>
+  </tr>
+  @for (item of employee; track item.id) {
+    <tr>
+      <td>{{ item.id }}</td>
+      <td>{{ item.name }}</td>
+      <td>{{ item.salary }}</td>
+    </tr>
+  } @empty {
+    <tr>
+      <td>No data found.</td>
+    </tr>
+  }
+</table> -->
+
+
+<!-- // $index,$even,$odd,$first,$last variable uses -->
+<!-- @for (item of employee; track item.id; let i=$index, e=$even, o=$odd) {
+    @if(e){
+  <p style="background-color: red;">Employee details : {{i+1}} , {{ item.id }} , {{ item.name }} , {{ item.salary }}</p>
+    }
+    @else{
+  <p style="background-color: green;">Employee details : {{i+1}} , {{ item.id }} , {{ item.name }} , {{ item.salary }}</p>
+    }
+} @empty {
+  <p>No data found.</p>
+} -->
+
+<!-- Ng style & Ng class-->
+<!-- <div [ngStyle]="{'background-color': Country === 'India' ? 'green' : 'red'}">My country is {{Country}}</div>
+<div [ngClass]="{'one': Country === 'India'}">My country is {{Country}}</div> -->
+
+<app-child>
+    <p>hi there</p>
+</app-child>
