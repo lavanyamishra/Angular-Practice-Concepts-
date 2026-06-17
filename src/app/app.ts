@@ -5,10 +5,11 @@ import { Admin } from './components/admin/admin';
 import { Parent } from './components/parent/parent';
 import { Child } from './components/child/child';
 import { UsePipes } from './components/use-pipes/use-pipes';
+import { UseService } from './use-service/use-service';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, User, Admin, Parent, Child,UsePipes],
+  imports: [RouterOutlet, User, Admin, Parent, Child,UsePipes,UseService],
   templateUrl: './app.html',
   styleUrl: './app.scss',
   // encapsulation: ViewEncapsulation.None,
