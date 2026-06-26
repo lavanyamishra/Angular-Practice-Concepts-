@@ -1,0 +1,49 @@
+<p>reactive-form works!</p>
+
+<form [formGroup]="regForm" (ngSubmit)="register()">
+  <div>
+    First Name : <input type="text" placeholder="Enter First Name" formControlName="fname" />
+    @if (regForm.controls['fname'].touched && !regForm.controls['fname'].valid) {
+      @if (regForm.controls['fname'].hasError('required')) {
+        <span>First name is required</span>
+      }
+      @if (regForm.controls['fname'].hasError('minlength')) {
+        <span>First name should be 5 char</span>
+      }
+
+      @if (regForm.controls['fname'].hasError('maxlength')) {
+        <span>First name should be less than 8 char</span>
+      }
+    }
+  </div>
+  <div>
+    Last Name : <input type="text" placeholder="Enter Last Name" formControlName="lname" />
+    @if (regForm.controls['lname'].touched && !regForm.controls['lname'].valid) {
+      <span>Last name is required</span>
+    }
+  </div>
+  <div>
+    Email : <input type="text" placeholder="Enter Email" formControlName="email" />
+    @if (regForm.controls['email'].touched && !regForm.controls['email'].valid) {
+      @if (regForm.controls['email'].hasError('required')) {
+        <span>First name is required</span>
+      }
+      @if (regForm.controls['email'].hasError('email')) {
+        <span>Please Enter Valid Email ID</span>
+      }
+    }
+  </div>
+  <div>
+    Mobile no : <input type="text" placeholder="Enter Mobile no" formControlName="mobileno" />
+    @if (regForm.controls['mobileno'].touched && !regForm.controls['mobileno'].valid) {
+      <span>Mobile no is required</span>
+    }
+  </div>
+  <div>
+    <button type="submit">Submit</button>
+    <button type="reset">Reset</button>
+    <button type="submit" (click)="ResetFn()">Cancel</button>
+    <button type="submit" (click)="fillData()">fill values</button>
+
+  </div>
+</form>

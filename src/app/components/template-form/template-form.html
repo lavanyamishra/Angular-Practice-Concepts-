@@ -1,0 +1,38 @@
+<p>template-form works!</p>
+<div>
+  <form #regdata="ngForm" (ngSubmit)="Register(regdata)">
+    <div>
+      First Name:
+      <input
+        type="text"
+        placeholder="Enter your First Name"
+        name="fname"
+        required
+        minlength="5"
+        maxlength="7"
+        ngModel
+        #fname="ngModel"
+      />
+      @if (fname.touched && !fname.valid) {
+        <span> First name is required </span>
+      }
+    </div>
+    <div>
+      Last Name:
+      <input type="text" placeholder="Enter your Last Name" name="lname" ngModel required #lname="ngModel">
+      @if (lname.touched && !lname.valid) {
+        <span> Last name is required </span>
+      }
+    </div>
+    <div>
+      Email :
+      <input type="text" placeholder="Enter your Email" name="email" required ngModel #email="ngModel" />
+      @if (email.touched && !email.valid) {
+        <span>Email is required</span>
+      }
+    </div>
+    <div>
+      <button type="submit" [disabled]="regdata.invalid">Submit</button>
+    </div>
+  </form>
+</div>

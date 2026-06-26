@@ -1,0 +1,24 @@
+<p>signal works!</p>
+
+{{courseName()}}
+<br>
+<br>
+{{studentObj() | json}}
+<br/>
+<br/>
+{{cityList() | json}}
+<br>
+<br>
+<input type="text" [(ngModel)]="cityName">
+<button (click)="changeCity()">Update City</button>
+<button (click)="addCity()">Add City</button>
+<button (click)="changeCourseName()">Change</button>
+
+
+<input type="text" (input)="updateFName($event)" placeholder="Enter First Name">
+<br>
+<input type="text" (input)="updateMName($event)" placeholder="Enter Middle Name">
+<br>
+<input type="text" (input)="updateLName($event)" placeholder="Enter Last Name">
+<br>
+<input type="text" [value]="fullName()">

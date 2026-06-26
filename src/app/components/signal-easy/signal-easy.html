@@ -1,0 +1,21 @@
+<p>signal-easy works!</p>
+<button (click)="setvalue()">Set Value</button>
+
+
+Price : <b>{{price()}}</b>
+<br/>
+Quantity : <b>{{quantity()}}</b>
+<br/>
+Total Price : {{totalPrice()}}
+<br/>
+<button (click)="addQuantity()">Add Quantity</button>
+<br/>
+
+
+
+name: {{name()}}
+<br/>
+<button (click)="changeName()">change NAME</button>
+@if(showYellow){
+<h3 style="background-color: yellow;">hi i am yellow</h3>
+}
